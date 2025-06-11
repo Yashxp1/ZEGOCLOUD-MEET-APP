@@ -34,7 +34,7 @@ const DateTime = () => {
           {time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
         </p>
         <p className="text-2xl">{formattedDate}</p>
-        <p className="text-4xl">{dayName}</p>
+        <p className="text-5xl">{dayName}</p>
       </div>
     </div>
   );
