@@ -1,5 +1,6 @@
 import { icons, MessageSquarePlus, Video } from 'lucide-react';
 import React from 'react';
+import { Button } from './ui/button';
 
 const chatMeet = [
   {
@@ -24,9 +25,9 @@ const MeetingBox = () => {
           key={idx}
           className={`${i.color} w-full items-center justify-center`}
         >
-          <div className='flex flex-col gap-4 py-10 justify-center items-center'>
+          <div className="flex flex-col gap-4 py-10 justify-center items-center">
             <span>{i.icon}</span>
-            <h1 className='text-xl'>{i.label}</h1>
+            <h1 className="text-xl">{i.label}</h1>
           </div>
         </div>
       ))}
