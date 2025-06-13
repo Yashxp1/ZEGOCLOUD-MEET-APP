@@ -7,6 +7,13 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { email, username, password } = body;
 
+    if (!email || !username || !password) {
+      return NextResponse.json(
+        { user: null, message: 'Email, username, and password are required.' },
+        { status: 400 }
+      );
+    }
+
     const existingUserByEmail = await prisma.user.findUnique({
       where: { email: email },
     });
@@ -15,7 +22,7 @@ export async function POST(req: Request) {
       return NextResponse.json(
         {
           user: null,
-          message: 'user with this email already exits',
+          message: 'user with this email already exists',
         },
         { status: 409 }
       );
