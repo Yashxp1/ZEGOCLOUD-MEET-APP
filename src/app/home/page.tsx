@@ -10,14 +10,10 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import UserLogOut from '@/components/UserLogOut';
 
 const page = async () => {
-  const session = await getServerSession(authOptions);
-
-  console.log(session);
-
   return (
     <div className="border">
       <div className="border px-4 py-2 h-fit w-full flex justify-between items-center">
-        <div className="bg-purple-600">SESSION:{session?.user.username}</div>
+        <div className="bg-purple-600">SESSION: USERNAME</div>
         <div className="flex items-center gap-2">
           <Target size={32} />
           <span className="font-semibold">Chat Wave</span>
@@ -36,14 +32,6 @@ const page = async () => {
       <div>
         {/* <Link>
         </Link> */}
-
-        {session?.user ? (
-          <UserLogOut />
-        ) : (
-          <Link className={buttonVariants()} href="/login">
-            Login
-          </Link>
-        )}
       </div>
     </div>
   );
