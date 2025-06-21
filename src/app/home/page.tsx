@@ -1,13 +1,10 @@
 import DateTime from '@/components/DateTime';
-import Link from 'next/link';
 import MeetingBox from '@/components/MeetingBox';
 import { ModeToggle } from '@/components/ModeToggle';
-import { authOptions } from '@/lib/auth';
+
 import { Target } from 'lucide-react';
-import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 import React from 'react';
-import { Button, buttonVariants } from '@/components/ui/button';
-import UserLogOut from '@/components/UserLogOut';
 
 const page = async () => {
   return (
