@@ -5,11 +5,9 @@ import Google from 'next-auth/providers/google';
 export default {
   providers: [
     Google({
-
-    }), 
-     Credentials({
-
-    })
-  ]
-
-} satisfies NextAuthConfig
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+    Credentials({}),
+  ],
+} satisfies NextAuthConfig;
