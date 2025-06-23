@@ -12,4 +12,10 @@ export const {
   adapter: PrismaAdapter(prisma),
   session: { strategy: 'jwt' },
   ...authConfig,
+  callbacks: {
+    async jwt({ token }) {
+      console.log('jwt', token);
+      return token;
+    },
+  },
 });
