@@ -12,13 +12,13 @@ import {
 } from '@/components/ui/form';
 import CardWrapper from './card-wrapper';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { RegisterSchema } from '@/schemas/AuthSchema';
+import { LoginSchema } from '@/schemas/AuthSchema';
 import { Input } from '@/components/ui/input';
 import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 
-import { register } from "@/actions/register";
+import { login } from '@/actions/login';
 
 import { FormSuccess } from './form-success';
 import { FormError } from './form-error';
@@ -26,44 +26,40 @@ import GoogleLogin from './google-login';
 
 import React from 'react';
 
-const RegisterForm = () => {
+const LoginForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
-  const form = useForm<z.infer<typeof RegisterSchema>>({
-    resolver: zodResolver(RegisterSchema),
+  const form = useForm<z.infer<typeof LoginSchema>>({
+    resolver: zodResolver(LoginSchema),
     defaultValues: {
       email: '',
-      name: '',
       password: '',
-      passwordConfirmation: '',
     },
   });
 
-
-   const onSubmit = async (data: z.infer<typeof RegisterSchema>) => {
+  const onSubmit = async (data: z.infer<typeof LoginSchema>) => {
     setLoading(true);
-    register(data).then((res:any) => {
+    login(data).then((res: any) => {
       if (res.error) {
         setError(res.error);
         setLoading(false);
       }
       if (res.success) {
-        setError("");
+        setError('');
         setSuccess(res.success);
         setLoading(false);
       }
     });
   };
 
-
   return (
     <CardWrapper
-      headerLabel="Create an account"
-      title="Register"
-      backButtonHref="/auth/login"
-      backButtonLabel="Already have an account"
+      headerLabel="Login your account"
+      title="Login"
+      backButtonHref="/register"
+      backButtonLabel="Don't have an account"
       showSocial
     >
       <Form {...form}>
@@ -86,7 +82,7 @@ const RegisterForm = () => {
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
@@ -98,7 +94,7 @@ const RegisterForm = () => {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
             <FormField
               control={form.control}
               name="password"
@@ -112,7 +108,7 @@ const RegisterForm = () => {
                 </FormItem>
               )}
             />
-            <FormField
+            {/* <FormField
               control={form.control}
               name="passwordConfirmation"
               render={({ field }) => (
@@ -124,12 +120,12 @@ const RegisterForm = () => {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
           </div>
           <FormSuccess message={success} />
           <FormError message={error} />
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? 'Loading...' : 'Register'}
+            {loading ? 'Loading...' : 'Login'}
           </Button>
         </form>
       </Form>
@@ -138,4 +134,4 @@ const RegisterForm = () => {
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
