@@ -2,9 +2,8 @@
 
 import * as z from 'zod';
 import { prisma } from '@/lib/prisma';
-import { RegisterSchema } from '@/schemas/registerSchema';
+import { RegisterSchema } from '@/schemas/AuthSchema';
 import bcrypt from 'bcryptjs';
-import { _toLowerCase } from 'zod/v4/core';
 
 export const register = async (data: z.infer<typeof RegisterSchema>) => {
   try {
