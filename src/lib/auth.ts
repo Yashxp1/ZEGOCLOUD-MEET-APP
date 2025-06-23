@@ -4,7 +4,6 @@ import { prisma } from './prisma';
 import authConfig from './auth.config';
 import { getUserById } from '@/app/data/user';
 import { getAccountByUserId } from '@/app/data/accounts';
-import { tr } from 'zod/v4/locales';
 
 export const {
   handlers: { GET, POST },
