@@ -19,7 +19,7 @@ export const LoginSchema = z.object({
   email: z.string().email({
     message: 'Please enter a valid email address',
   }),
-  passord: z.string().min(1, {
+  password: z.string().min(1, {
     message: 'Please enter a valid password',
   }),
 });
