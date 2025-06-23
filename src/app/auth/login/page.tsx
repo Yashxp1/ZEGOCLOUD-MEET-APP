@@ -1,10 +1,12 @@
-import LoginFrom from '@/components/auth/LoginForm'
-import React from 'react'
+import LoginFrom from '@/components/auth/LoginForm';
+import React from 'react';
 
 const page = () => {
   return (
-  <LoginFrom/>
-  )
-}
+    <div className="flex justify-center items-center h-screen">
+      <LoginFrom />
+    </div>
+  );
+};
 
-export default page
+export default page;

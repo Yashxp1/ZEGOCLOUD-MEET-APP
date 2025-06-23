@@ -25,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className='flex justify-center items-center h-screen'>
+      <body className=''>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
