@@ -1,12 +1,15 @@
 import DateTime from '@/components/DateTime';
 import MeetingBox from '@/components/MeetingBox';
 import { ModeToggle } from '@/components/ModeToggle';
+import { auth } from '@/lib/auth';
 
 import { Target } from 'lucide-react';
 import { redirect } from 'next/navigation';
 import React from 'react';
 
 const page = async () => {
+  const session = await auth()
+  console.log(session)
   return (
     <div className="border">
       <div className="border px-4 py-2 h-fit w-full flex justify-between items-center">
