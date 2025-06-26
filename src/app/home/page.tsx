@@ -1,5 +1,6 @@
 import SignOut from '@/components/auth/SignOut';
 import MeetBtn from '@/components/MeetBtn';
+import RandomSlug from '@/components/meeting/RandomSlug';
 import { ModeToggle } from '@/components/ModeToggle';
 import { auth } from '@/lib/auth';
 import { Spline } from 'lucide-react';
@@ -23,6 +24,7 @@ const page = async () => {
       </div>
       <div>
         <MeetBtn />
+        <RandomSlug />
       </div>
     </div>
   );
