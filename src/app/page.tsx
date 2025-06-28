@@ -4,12 +4,10 @@ import React from 'react';
 
 const page = () => {
   return (
-    <div className="text-8xl">
+    <div>
       LANDING PAGE
       <Link href="/home">
-        <div>
-          <Button className="bg-green-500">Go to home</Button>
-        </div>
+        <Button>home</Button>
       </Link>
     </div>
   );
