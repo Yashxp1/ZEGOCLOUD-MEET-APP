@@ -5,8 +5,12 @@ import { ModeToggle } from '@/components/ModeToggle';
 import { auth } from '@/lib/auth';
 import { Spline } from 'lucide-react';
 import React from 'react';
+import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
+
 
 const page = async () => {
+  
+
   const session = await auth();
   console.log(session);
   return (
