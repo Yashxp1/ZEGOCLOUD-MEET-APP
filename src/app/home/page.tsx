@@ -17,7 +17,7 @@ const page = async () => {
         <span className="font-semibold flex justify-center items-center gap-3">
           {' '}
           <Spline size={32} className="text-pink-600" />
-          ScribbleTalk
+          ZEGO-MEET
         </span>
         <div className="flex gap-4">
           <ModeToggle />
